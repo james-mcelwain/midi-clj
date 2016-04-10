@@ -227,7 +227,7 @@
   ([input short-msg-fn] (midi-handle-events input short-msg-fn (fn [sysex-msg] nil)))
   ([input short-msg-fn sysex-msg-fn]
      (let [receiver (proxy [Receiver] []
-                      (close [] nil)
+                      (close [] (proxy-super close) nil)
                       (send [msg timestamp] (cond (instance? ShortMessage msg )
                                                   (short-msg-fn
                                                    (assoc (midi-msg msg timestamp)
