@@ -1,4 +1,4 @@
-(ns overtone.midi
+(ns midi
   #^{:author "Jeff Rose"
      :doc "A higher-level API on top of the Java MIDI apis.  It makes
            it easier to configure midi input/output devices, route
